@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0;
+            border: none;
+            outline: none;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .container{
+            background-color: rgb(50, 205, 50);
+            padding: 10px 20px;
+        }
+        h1{
+            font-size: 30px;
+            margin: 10px 0;
+        }
+        p{
+            font-size: 20px;
+        }
+        input{
+            width: 100%;
+            padding: 7px 20px;
+        }
+        .m{
+            margin-bottom: 40px;
+        }
+        .cal
+        {
+            font-size: 16px;
+            padding: 7px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Calculator</h1>
+        <p>Loan Amount %</p>
+        <input type="text" class="loan">
+        
+        <p>Interest %</p>
+        <input type="text" class="interest">
+        
+        <p>Month To pay</p>
+        <input type="text" class="pay">
+
+        <p class="m">Monthly Payment</p>
+        <p class="result"></p>
+
+        <button class="cal">Calculate</button>
+    </div>
+
+    <script>
+        const cal=document.querySelector(".cal")
+        const amount=document.querySelector(".loan")
+        const interest=document.querySelector(".interest")
+        const pay=document.querySelector(".pay")
+        const result=document.querySelector(".result")
+        cal.addEventListener("click",()=>{
+            result.innerHTML=(amount.value)/pay.value+interest.value
+        })
+        
+    </script>
+</body>
+</html>
